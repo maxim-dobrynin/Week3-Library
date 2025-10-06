@@ -8,19 +8,38 @@ namespace Library
 {
     class Book
     {
-        string Title;
-        string Author;
-        string ISBN;
+        private string title; // variable
+        private string author; // variable
+        private string isbn; // variable
 
-        // Example of constructor that allows us to
-        // 'construct' a new Book object
-        public Book(string bookTitle, string bookAuthor, string bookISBN)
+        // Title property to allow access
+        // to the title private variable
+        public string Title
         {
-            Title = bookTitle;
-            Author = bookAuthor;
-            ISBN = bookISBN;
+            get { return title; } // get method
+            set { title = value; } // set method
+        }
+        public string Author
+        {
+            get { return author; }
+            set { author = value; }
+        }
+        public string ISBN
+        {
+            get { return isbn; }
+            set { isbn = value; }
         }
 
+        // Constructor to add a new book
+        public Book(string bookTitle, string bookAuthor, string bookISBN)
+        {
+            this.Title = bookTitle;
+            this.Author = bookAuthor;
+            this.ISBN = bookISBN;
+        }
+
+        
+        // Method to display imformation about a book
         public void DisplayInfo()
         {
             Console.WriteLine($"Book title: {Title}");
