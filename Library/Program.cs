@@ -4,6 +4,15 @@
     string Author;
     string ISBN;
 
+    // Example of constructor that allows us to
+    // 'construct' a new Book object
+    public Book(string bookTitle, string bookAuthor, string bookISBN)
+    {
+        Title = bookTitle;
+        Author = bookAuthor;
+        ISBN = bookISBN;
+    }
+
     void DisplayInfo()
     {
         Console.WriteLine($"Book title: {Title}");
@@ -15,7 +24,8 @@
     static void Main(string[] args)
     {
         // New instance (object) of Book class
-        Book book = new Book();
+        Book book = new Book("C# for beginners", "Bill Gates", "1234567");
+        book.DisplayInfo();
 
         // Information for book
         book.Title = "C# for beginners";
